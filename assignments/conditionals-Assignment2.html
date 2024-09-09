@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let electricityUsageUnits = Math.abs(parseInt(prompt("enter the electricity units consumed for the month")))
+
+        if(electricityUsageUnits<=50){
+            console.log(`Electricity bill is ₹ ${0.50*electricityUsageUnits}`)
+        }else if(electricityUsageUnits<=150){
+            console.log(`Electricity bill is ₹ ${0.75*electricityUsageUnits}`)
+        }else if(electricityUsageUnits<=250){
+            console.log(`Electricity bill is ₹ ${1.20*electricityUsageUnits}`)
+        }else{
+            console.log(`Electricity bill is ₹ ${1.50*electricityUsageUnits + (20*electricityUsageUnits)/100}`)
+        }
+    </script>
+</body>
+</html>
