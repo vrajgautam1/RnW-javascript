@@ -14,15 +14,15 @@ if(typeof(num1) != "number" || isNaN(num1)){
         alert("u have to select the mathematical opeartion i.e.,: +,-,*,/,%")
         let modeofoperation = prompt("enter the symbol of mathematical operation")
         if(modeofoperation == "+"){
-            prompt(`The Sum of the two numbers is: ${num1+num2}`)
+            console.log(`The Sum of the two numbers is: ${num1+num2}`)
         }else if(modeofoperation == "-"){
-            prompt(`The Subtraction of the two numbers is: ${num1-num2}`)
+            console.log(`The Subtraction of the two numbers is: ${num1-num2}`)
         }else if(modeofoperation == "*"){
-            prompt(`The Multiplication of the two numbers is: ${num1*num2}`)
-        }else if(modeofoperation == "*"){
-            prompt(`The division of the two numbers is: ${num1/num2}`)
-        }else if(modeofoperation == "*"){
-            prompt(`The Modulo of the two numbers is: ${num1%num2}`)
+            console.log(`The Multiplication of the two numbers is: ${num1*num2}`)
+        }else if(modeofoperation == "/"){
+            console.log(`The division of the two numbers is: ${num1/num2}`)
+        }else if(modeofoperation == "%"){
+            console.log(`The Modulo of the two numbers is: ${num1%num2}`)
         }else{
             prompt(`Incorrect symbol. please try again`)
         }
