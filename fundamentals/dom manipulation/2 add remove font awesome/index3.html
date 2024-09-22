@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Change fonts using js</h1>
+    <p>we will add fonts dynamically using js</p>
+
+    <script>
+        let style = document.createElement('style');
+
+        let styleContent = `@font-face { 
+        font-family:'customFont';
+        src: url('fonts/Poppins-Italic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+        }`
+
+        style.appendChild(document.createTextNode(styleContent));
+
+        document.head.appendChild(style);
+
+        document.body.style.fontFamily = 'customFont'
+
+
+    </script>
+</body>
+</html>

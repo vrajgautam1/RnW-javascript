@@ -9,18 +9,18 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="bg-dark container">
 
-    <main class="form-signin w-25 m-auto">
-        <form class="container p-5">
-            <h1 class="h3 mb-3 text-center fw-normal">Enter your age</h1>
+    <main class="form-signin mt-5 mx-auto container row">
+        <form class="col-lg-6 p-5 rounded bg-dark-subtle mx-auto">
+            <h1 class="mb-3 text-center display-3 fw-light text-dark">Enter your age</h1>
 
             <div class="form mb-3">
                 <input type="number" class="form-control" id="message_box">
             </div>
 
             <button class="btn btn-primary w-100" id="submit_btn" type="submit">Submit</button>
-            <p class="mt-2 mb-3 age_message" id="message"></p>
+            <p class="mt-5 text-center mb-3 age_message fs-1 text-dark" id="message"></p>
         </form>
     </main>
 
@@ -32,7 +32,7 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.getElementById('submit_btn').addEventListener('click', function (event) {
+        document.getElementById('submit_btn').addEventListener('click', function(event) {
             message_box = document.getElementById('message_box').value
             message = document.getElementById('message')
 
@@ -43,15 +43,15 @@
                     message.textContent = "only +ve natural numbers are allowed"
                 } else {
                     if (message_box <= 3) {
-                        message.textContent = "You are an infant"
+                        message.textContent = "You are an infant 👶🏻"
                     } else if (message_box > 3 && message_box < 13) {
-                        message.textContent = "You are a child"
+                        message.textContent = "You are a child 🧒🏻"
                     } else if (message_box >= 13 && message_box < 18) {
-                        message.textContent = "You are a TeenAger"
+                        message.textContent = "You are a TeenAger 👨🏻"
                     } else if (message_box >= 18 && message_box < 60) {
-                        message.textContent = "You are an Adult"
+                        message.textContent = "You are an Adult 🧔🏻‍♂️"
                     } else if (message_box >= 60) {
-                        message.textContent = "You are a senior citizen"
+                        message.textContent = "You are a senior citizen 👨🏻‍🦳"
                     }
                 }
             }

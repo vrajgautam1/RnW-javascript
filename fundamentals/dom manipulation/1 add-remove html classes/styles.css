@@ -1,0 +1,20 @@
+.myId{
+    background-color: aquamarine;
+    color: black;
+    margin: 10px;
+    height: 250px;
+    width: 500px;
+}
+
+.main{
+    font-size: 18px;
+}
+
+.newClass{
+    background-color: #ff4e4e;
+    color: #fff;
+    height: 250px;
+    width: 500px;
+    margin: 10px;
+}
+

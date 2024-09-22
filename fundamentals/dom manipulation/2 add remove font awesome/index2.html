@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Applying custom fonts to text</h1>
+        <p>We will apply custom font to this text using javascript</p>
+        <p>Made by: <span id="my-name">Vraj Gautam</span></p>
+    </div>
+
+    <script>
+        let style = document.createElement('style');
+        style.type = 'text/css';
+
+        let fontFace = `@font-face
+        {
+        font-family:'myCustomFont';
+        src: url('fonts/Poppins-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+        
+        @font-face{
+        font-family: 'myCustomFont';
+        src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        }
+        
+        @font-face{
+        font-family: 'myCustomFont';
+        src: url('fonts/Poppins-Light.ttf') format('truetype');
+        font-weight: light;
+        font-style: normal;
+        }
+
+        @font-face{
+        font-family: 'exmouth';
+        src: url('fonts/exmouth_.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        #my-name {
+            font-family: 'exmouth', sans-serif;
+            font-size: 1.3rem;
+            margin-left: 10px;
+            color: #333;
+        }
+        `
+
+        style.appendChild(document.createTextNode(fontFace))
+
+        // console.log(typeof document.createTextNode(fontFace))
+
+        document.head.appendChild(style);
+
+        document.body.style.fontFamily = 'myCustomFont, sans-serif'
+        document.body.style.fontWeight = '600'
+        
+    </script>
+</body>
+</html>
