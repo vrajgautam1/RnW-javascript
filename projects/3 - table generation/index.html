@@ -20,7 +20,7 @@
             <p class="fs-3 mb-3 text-center">Enter the number of Rows and Columns to create a Table</p>
 
             <main class="form-signin col-lg-4 col-md-8 m-auto">
-                <form class="d-flex flex-column gap-2" onsubmit="generateTable(event)">
+                <form class="d-flex flex-column gap-2" onsubmit="">
 
                     <div class="form-floating">
                         <input type="number" class="form-control" id="tableRows" placeholder="rows">
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="d-flex gap-1">
-                        <button class="btn btn-primary w-50 py-2 fw-semibold" type="submit">Generate table</button>
+                        <button class="btn btn-primary w-50 py-2 fw-semibold" type="button" onclick="generateTable()">Generate table</button>
                         <button class="btn btn-primary w-50 py-2 fw-semibold" type="reset"
                             onclick="resetTable()">Reset</button>
                     </div>
@@ -56,8 +56,7 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function generateTable(event) {
-            event.preventDefault(); // Prevents the page from refreshing
+        function generateTable() {
 
             // get the table container and clear it if needed
             let tableContainer = document.getElementById("tableContainer");
