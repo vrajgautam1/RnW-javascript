@@ -14,10 +14,10 @@
 <body class="bg-dark-subtle container">
     <div class="text-secondary px-4 py-4">
 
-        <h1 class="display-4 text-secondary fw-semibold text-center mt-3">Project 3 - Table Generator</h1>
+        <h1 class="display-4 text-dark fw-semibold text-center mt-3">Project 3 - Table Generator</h1>
         <hr>
         <div class="col-lg-12 me-auto">
-            <p class="fs-3 mb-3 text-center">Enter the number of Rows and Columns to create a Table</p>
+            <p class="fs-5 mb-3 text-center" id="heading">Enter the number of Rows and Columns to create a Table</p>
 
             <main class="form-signin col-lg-4 col-md-8 m-auto">
                 <form class="d-flex flex-column gap-2" onsubmit="">
@@ -40,8 +40,8 @@
                 </form>
             </main>
 
-            <p class="fs-3 mt-5 text-center text-primary-emphasis fw-semibold">Your Output:</p>
-            <div id="tableContainer" class="customScrollbar">
+            <p class="fs-3 mt-5 text-center text-dark fw-semibold">Your Output:</p>
+            <div id="tableContainer" class="customScrollbar overflow-scrol">
 
             </div>
         </div>
@@ -55,58 +55,58 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
-    <script>
-        function generateTable() {
+    <script src="./script.js">
+        // function generateTable() {
 
-            // get the table container and clear it if needed
-            let tableContainer = document.getElementById("tableContainer");
-            tableContainer.innerHTML = "";
-            tableContainer.classList.add("overflow-scroll");
+        //     // get the table container and clear it if needed
+        //     let tableContainer = document.getElementById("tableContainer");
+        //     tableContainer.innerHTML = "";
+        //     tableContainer.classList.add("overflow-scroll");
 
-            // Get the values of rows and columns
-            let rows = parseInt(document.getElementById("tableRows").value);
-            let cols = parseInt(document.getElementById("tableColumns").value);
+        //     // Get the values of rows and columns
+        //     let rows = parseInt(document.getElementById("tableRows").value);
+        //     let cols = parseInt(document.getElementById("tableColumns").value);
 
-            // Validating rows and columns
-            if (rows <= 0) {
-                alert("The value of rows cannot be 0 or negative");
-                return;
-            }
+        //     // Validating rows and columns
+            // if (rows <= 0) {
+            //     alert("The value of rows cannot be 0 or negative");
+            //     return;
+            // }
 
-            if (cols <= 0) {
-                alert("The value of columns cannot be 0 or negative");
-                return;
-            }
+            // if (cols <= 0) {
+            //     alert("The value of columns cannot be 0 or negative");
+            //     return;
+            // }
 
-            // Create table element
-            let table = document.createElement("table");
-            table.classList.add("table", "table-bordered", "table-striped", "text-center", "bg-secondary-subtle", "p-5", "rounded", "text-secondary");
+        //     // Create table element
+        //     let table = document.createElement("table");
+        //     table.classList.add("table", "table-bordered", "table-striped", "text-center", "bg-secondary-subtle", "p-5", "rounded", "text-secondary");
 
-            // Loop to generate rows and columns
-            let n = 1;
-            for (let i = 0; i < rows; i++) {
-                let tr = document.createElement("tr"); // Create a table row
+        //     // Loop to generate rows and columns
+        //     let n = 1;
+        //     for (let i = 0; i < rows; i++) {
+        //         let tr = document.createElement("tr"); // Create a table row
 
-                for (let j = 0; j < cols; j++) {
-                    let td = document.createElement("td"); // Create a table data cell
-                    td.textContent = `${n}`; // Insert text
-                    tr.appendChild(td); // Append cell to row
-                    n++
-                }
+        //         for (let j = 0; j < cols; j++) {
+        //             let td = document.createElement("td"); // Create a table data cell
+        //             td.textContent = `${n}`; // Insert text
+        //             tr.appendChild(td); // Append cell to row
+        //             n++
+        //         }
 
-                table.appendChild(tr); // Append row to table
-            }
+        //         table.appendChild(tr); // Append row to table
+        //     }
 
-            // Append the generated table to the table container
-            tableContainer.appendChild(table);
-        }
+        //     // Append the generated table to the table container
+        //     tableContainer.appendChild(table);
+        // }
 
-        function resetTable() {
-            // Get the table container and clear its content
-            let tableContainer = document.getElementById("tableContainer");
-            tableContainer.innerHTML = "";
+        // function resetTable() {
+        //     // Get the table container and clear its content
+        //     let tableContainer = document.getElementById("tableContainer");
+        //     tableContainer.innerHTML = "";
             
-        }
+        // }
     </script>
 </body>
 
