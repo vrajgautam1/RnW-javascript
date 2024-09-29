@@ -1,7 +1,11 @@
 function generateTable(){
+    let rowErrMsg = document.getElementById('rowErrMsg')
+    let colErrMsg = document.getElementById('colErrMsg')
     let tableContainer = document.getElementById("tableContainer") //we get the div for tableContainer in the variable named tableContainer now whatever effects we apply to this variable it will be applied to that div later
 
     tableContainer.innerHTML = '' //we assume that the table container has something in it. so we empty it
+    rowErrMsg.innerHTML = '';
+    colErrMsg.innerHTML = '';
 
     //now we need the values inside the rows and cols input fields to use them to generate the table
 
@@ -10,13 +14,24 @@ function generateTable(){
 
     //validation
 
+    let hasError = false;
+
+    // Validation for rows
     if (rows <= 0) {
-        alert("The value of rows cannot be 0 or negative");
-        return;
+        rowErrMsg.innerHTML = "The value of rows cannot be 0 or negative"; // Show error
+        alert("The value of rows cannot be 0 or negative"); // Show error
+        hasError = true;
     }
 
+    // Validation for columns
     if (cols <= 0) {
-        alert("The value of columns cannot be 0 or negative");
+        colErrMsg.innerHTML = "The value of cols cannot be 0 or negative";
+        alert("The value of cols cannot be 0 or negative");  // Show error
+        hasError = true;
+    }
+
+    // If there are any validation errors, stop execution
+    if (hasError) {
         return;
     }
 

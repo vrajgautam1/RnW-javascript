@@ -23,14 +23,15 @@
                 <form class="d-flex flex-column gap-2" onsubmit="">
 
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="tableRows" placeholder="rows">
+                        <input type="number" class="form-control" id="tableRows" placeholder="rows" required>
                         <label for="tableRows">Rows</label>
                     </div>
-
+                    <span id="rowErrMsg" class="text-danger"></span>
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="tableColumns" placeholder="columns">
+                        <input type="number" class="form-control" id="tableColumns" placeholder="columns" required>
                         <label for="tableColumns">Columns</label>
                     </div>
+                    <span id="colErrMsg" class="text-danger"></span>
 
                     <div class="d-flex gap-1">
                         <button class="btn btn-primary w-50 py-2 fw-semibold" type="button" onclick="generateTable()">Generate table</button>
