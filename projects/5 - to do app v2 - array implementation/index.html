@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-slate-300 container mx-auto">
+
+    <!-- 1 - header of the app -->
+    <h1 class="text-3xl font-bold text-black text-center mt-4">
+        To-Do List APP
+    </h1>
+
+    <!-- 2 - input field for adding new tasks -->
+    <div id="input-box" class="flex justify-center mt-8">
+        <form class="w-full max-w-3xl bg-slate-500 p-5 rounded shadow-md">
+            <div class="flex gap-5 items-center">
+                <input
+                    class="appearance-none block w-4/5 bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                    id="taskText" type="text" placeholder="Your task here">
+                <input type="button" onclick="generateTask()" value="Add Task"
+                    class="bg-blue-500 hover:bg-blue-700 w-1/4 text-white font-semibold py-2 px-4 rounded">
+
+
+            </div>
+        </form>
+    </div>
+
+    <!-- 3 - container to store tasks -->
+    <div class="mt-8 mx-auto max-w-3xl bg-white rounded shadow-md p-4">
+        <div id="task-header" class="flex justify-between text-lg font-bold mb-2">
+            <span>Task</span>
+            <span class="mr-10">Status</span>
+        </div>
+
+        <div id="taskListContainer">
+
+           
+        
+        </div>
+        
+
+        <!-- Add more tasks here -->
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+<!-- template for displaying tasks -->
+<!-- <div class="flex justify-between border-b py-2">
+    <span>Sample Task 2</span>
+    <span>Complete</span>
+</div> -->
+
+
+<!-- 
+version alpha
+
+<div class="flex justify-between py-2 border-b">
+    <div>Sample Task 2</div>
+    
+    <div class="pl-5 border-l-2 border-black">
+        <button class="bg-red-600 text-white font-semibold py-2 px-5 rounded">Complete</button>
+    </div>
+
+</div> -->
