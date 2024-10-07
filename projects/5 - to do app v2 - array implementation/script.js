@@ -1,73 +1,53 @@
-// create an empty array
-let tasksArray = []
+let tasksArray = [];
 
 function generateTask() {
-    // Prevent the default form submission
+    let taskListContainer = document.getElementById("taskListContainer");
+    let taskText = document.getElementById("taskText").value;
 
-    // 1 - get access of the task list container
-    let taskListContainer = document.getElementById("taskListContainer")
-
-    // 2 - get values from the input field
-    let taskText = document.getElementById("taskText").value
-
-    // 3 - validation
     if (!taskText) {
-        alert("Please enter a task")
+        alert("Please enter a task");
         return;
     }
 
-    ///--------*****************MOST IMPORTANT*************--------/////
-    // 4 - store the task in the array
-    tasksArray.push(taskText) // Store the task in the array
+    // Store task in the array
+    tasksArray.push(taskText);
 
-    //----------------------------------------------------------------------------------
-    // 5 - create a task container element and its child elements where I will store tasks
-    let taskContainer = document.createElement("div")
+    let taskContainer = document.createElement("div");
+    let taskContainerText = document.createElement("span");
+    let taskDeleteButtonDiv = document.createElement("div");
+    let taskDeleteButton = document.createElement("button");
 
-    // 5.0.1 taskText span
-    let taskContainerText = document.createElement("span")
+    taskDeleteButtonDiv.appendChild(taskDeleteButton);
+    taskContainer.appendChild(taskContainerText);
+    taskContainer.appendChild(taskDeleteButtonDiv);
 
-    // 5.0.2 taskDelete button and its div
-    let taskDeleteButtonDiv = document.createElement("div")
-    let taskDeleteButton = document.createElement("button")
+    // Tailwind classes with added hover-shift class for animation
+    taskContainer.classList.add("flex", "justify-between", "border-b", "py-2", "transition-all", "hover:bg-gray-100", "hover-shift");
+    taskDeleteButtonDiv.classList.add("pl-5");
+    taskDeleteButton.classList.add("bg-green-600", "hover:bg-white", "hover:text-lime-600", "shadow-lg", "px-2", "text-white", "font-semibold", "py-2", "rounded");
 
-    //5.0.2.1
-    taskDeleteButtonDiv.appendChild(taskDeleteButton)
+    taskContainer.addEventListener("mouseenter", function () {
+        taskDeleteButtonDiv.classList.add("border-l-2", "border-slate-800");
+    });
 
-    // 5.1 - add taskContainerText and delete button to the taskContainer
-    taskContainer.appendChild(taskContainerText)
-    taskContainer.appendChild(taskDeleteButtonDiv)
-    
-    //----------------------------------------------------------------------------------------
+    taskContainer.addEventListener("mouseleave", function () {
+        taskDeleteButtonDiv.classList.remove("border-l-2", "border-slate-800");
+    });
 
-    // 6 - add tailwind CSS classes to the created elements
-    taskContainer.classList.add("flex", "justify-between", "border-b", "py-2")
-    // taskContainerText.classList.add("")
-    taskDeleteButtonDiv.classList.add("pl-5")
-    taskDeleteButton.classList.add("bg-green-600", "hover:bg-white","hover:text-lime-600","shadow-lg", "px-2", "text-white", "font-semibold", "py-2", "px-1", "rounded")
+    taskContainerText.textContent = taskText;
+    taskDeleteButton.innerHTML = "Completed";
 
-    taskContainer.addEventListener("mouseenter",function(){
-        taskDeleteButtonDiv.classList.add("border-l-2", "border-slate-800")
-    })
+    // Append task to the list
+    taskListContainer.appendChild(taskContainer);
 
-    taskContainer.addEventListener("mouseleave",function(){
-        taskDeleteButtonDiv.classList.remove("border-l-2", "border-slate-800")
-    })
+    document.getElementById("taskText").value = "";
 
-    // 7 - add text to the taskContainerText element
-    taskContainerText.textContent = taskText
-    taskDeleteButton.innerHTML = "Completed"
-
-    // 8 - append the taskContainer to the taskListContainer
-    taskListContainer.appendChild(taskContainer)
-
-    // 9 - clear the input field
-    document.getElementById("taskText").value = ""
-
-    // 10 - add event listener to the delete button
-    taskDeleteButton.addEventListener("click", function() {
-        // Remove the task from the array
-        tasksArray = tasksArray.filter(task => task !== taskText); // Update the array
-        taskListContainer.removeChild(taskContainer); // Remove the task from the DOM
-    })
+    // Remove task on click with fade-out effect
+    taskDeleteButton.addEventListener("click", function () {
+        taskContainer.classList.add("fade-out");
+        setTimeout(() => {
+            tasksArray = tasksArray.filter(task => task !== taskText);
+            taskListContainer.removeChild(taskContainer);
+        }, 500); // Match timeout with animation duration
+    });
 }
