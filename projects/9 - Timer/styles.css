@@ -1,13 +1,63 @@
-#main_container{
-    width: 1000px;
-    height: 300px;
-    background-color: darkcyan;
-    border-radius: 30px;
-}
-
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 100vh; /* Use full height for better centering */
+    font-family: "Poppins", sans-serif; /* Modern and elegant font */
+    background-color: #adfff5; /* Softer background color */
+    margin: 0; /* Remove default body margin */
+    flex-direction: column;
+}
+
+#main_container {
+    width: 90%; /* Make responsive for smaller screens */
+    max-width: 600px; /* Limit width on larger screens */
+    height: auto; /* Adapt height based on content */
+    background-color: #1d3557; /* Softer black tone */
+    border-radius: 30px;
+    padding: 20px; /* Add padding for better spacing */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    flex-wrap: wrap; /* Wrap elements for better responsiveness */
+}
+
+.internal_container {
+    width: 25%; /* Slightly larger for better visibility */
+    aspect-ratio: 1/1;
+    background-color: #264653; /* Softer dark tone */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px; /* Balanced padding */
+    color: #f4f4f4; /* Lighter text color for contrast */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    text-align: center;
+}
+
+.time-digit {
+    font-size: 5rem; /* Responsive font size */
+    font-weight: 500;
+    margin: 0; /* Remove unnecessary margin */
+}
+
+#start_button {
+    margin-top: 20px;
+    padding: 10px 20px; /* Add consistent padding */
+    font-size: 1.5rem; /* Slightly smaller for modern look */
+    font-weight: bold;
+    border-radius: 30px; /* Softer button edges */
+    border: none;
+    background-color: #e9c46a; /* Vibrant button color */
+    color: #264653; /* Darker text for contrast */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+#start_button:hover {
+    background-color: #f4a261; /* Brighter color on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
 }

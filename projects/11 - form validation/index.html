@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myForm" onsubmit="return formValid()">
+        <p>
+            <label for="cname">Name (required, at least 2 characters)</label>
+            <input id="cname" name="name" minlength="2" type="text">
+            <p id="nameErr" style="color: red;"></p>
+        </p>
+        <p>
+            <label for="cemail">E-Mail (required)</label>
+            <input id="cemail" type="email" name="email" required>
+        </p>
+        <p>
+            <label for="curl">URL (optional)</label>
+            <input id="curl" type="url" name="url">
+        </p>
+        <p>
+            <label for="password">Enter Password</label>
+            <input id="password" type="password" name="pw" required>
+        </p>
+        <p>
+            <label for="confirm_password">Confirm Password</label>
+            <input id="confirm_password" type="password" name="cnfPw" required>
+        </p>
+        <p>
+            <label for="ccomment">Your comment (required)</label>
+            <textarea id="ccomment" name="comment" required></textarea>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+
+    
+     
+    </script>
+</body>
+
+</html>

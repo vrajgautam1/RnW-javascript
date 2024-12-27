@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <title>Dynamic Validation</title>
+</head>
+
+<body>
+    <form id="myForm" onsubmit="return formValid()">
+        <p>
+            <label for="cname">Name</label>
+            <input id="cname" name="name" minlength="2" type="text">
+        <p id="nameErr" class="error"></p>
+        </p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let myForm = document.getElementById("myForm");
+        let cname = document.getElementById("cname");
+        let nameErr = document.getElementById("nameErr");
+
+        function validateName() {
+            let username = cname.value.trim();
+
+            if (username == "") {
+                nameErr.innerText = "name cannot be empty"
+            } else if (username.length < 5) {
+                nameErr.innerText = "name cannot be less than 5 characters"
+            } else {
+                nameErr.innerText = ""
+            }
+        }
+
+        cname.addEventListener("input", validateName)
+
+        function formValid() {
+            event.preventDefault()
+            console.log(cname.value)
+            validateName()
+            if (nameErr.innerText === "") {
+                alert("form submitted successfully")
+                myForm.reset()
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

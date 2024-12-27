@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Bootstrap demo</title>
+</head>
+
+<body>
+    <h1 class="text-center">CRUD Application</h1>
+
+    <div class="container p-3   ">
+        <p>All labels marked with "*" are required fields</p>
+        <form class="row g-3" id="studentForm" onsubmit="return createStudent(event)">
+            <div class="col-6">
+
+                <!-- userid -->
+                <div class="col-md-12 mb-3">
+                    <input type="number" class="form-control" id="userid" name="userid" hidden>
+                </div>
+
+                <!-- names -->
+                <div class="col-md-12 d-flex gap-2 container px-0 pe-2 mb-3">
+                    <div class="col-md-6">
+                        <label for="inputFirstName" class="form-label">First Name*</label>
+                        <input type="text" class="form-control" id="inputFirstName" name="inputFirstName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputLastName" class="form-label d-flex justify-content-between"><span>Last
+                                Name</span> <span>(Optional)</span></label>
+                        <input type="text" class="form-control" id="inputLastName" name="inputLastName">
+                    </div>
+                </div>
+
+                <!-- email -->
+                <div class="col-md-12 mb-3">
+                    <label for="inputEmail" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="inputEmail" name="inputEmail">
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-12 mb-3">
+                    <label for="inputContact" class="form-label">Contact*</label>
+                    <input type="number" class="form-control" id="inputContact" name="inputContact">
+                </div>
+
+                <!-- password -->
+                <div class="col-md-12 mb-3">
+                    <label for="inputPassword" class="form-label">Password*</label>
+                    <input type="password" class="form-control" name="inputPassword" id="inputPassword">
+                </div>
+
+                <!-- create -->
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Create Account</button>
+                </div>
+            </div>
+
+            <div class="col-6 d-flex flex-cen">
+                <img src="./3886130.jpg" width="60%" class="mx-auto" alt="">
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary my-3 w-25 position-relative">Your Cart <i class="bi bi-cart"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCountBadge">
+                    0
+                  </span>
+            </button>
+        </div>
+
+        <hr class="border border-secondary border-3 opacity-75">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
